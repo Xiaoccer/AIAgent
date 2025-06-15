@@ -1,0 +1,2 @@
+easyocr==1.7.2
+openai==1.86.0
