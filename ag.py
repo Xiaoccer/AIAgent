@@ -6,6 +6,7 @@ import os
 from openai import OpenAI
 import easyocr
 import warnings
+from prompt_toolkit import prompt
 
 def ocr(image_input):
     reader = easyocr.Reader(['ch_sim', 'en'])
@@ -92,7 +93,8 @@ def chat_mode(deep=False, stream=True):
     print("--------------------------------------")
     while True:
         try:
-            user_input = input("\n🐮🐮🐮 提问：\n").strip()
+            print("\n🐮🐮🐮 提问：", flush=True)
+            user_input = prompt("").strip()
 
             if user_input.lower() in ['exit', 'quit', 'q']:
                 break
